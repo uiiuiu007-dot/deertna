@@ -1,75 +1,30 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ديرتنا | DEERTNA - تسوق بذوق</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ديرتنا | تسوق من أمازون</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Cairo',sans-serif}
-:root{--navy:#0A1628;--navy2:#12233F;--gold:#D4AF37;--gold2:#F5D67B;--light:#F8F6EF;--muted:#9AA8C0}
-body{background:var(--navy);color:var(--light)}
-a{color:inherit;text-decoration:none}
-header{position:sticky;top:0;z-index:50;background:rgba(10,22,40,.95);backdrop-filter:blur(10px);border-bottom:1px solid #D4AF3733}
-.top{max-width:1200px;margin:auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{font-size:28px;font-weight:900;line-height:1}
-.logo span{color:var(--gold);display:block;font-size:11px;letter-spacing:3px}
-.search{flex:1;max-width:520px;display:flex;background:#fff;border-radius:999px;overflow:hidden;border:2px solid var(--gold)}
-.search input{flex:1;border:0;outline:0;padding:12px 16px;font-size:15px}
-.search button{background:var(--gold);border:0;padding:0 18px;font-weight:900;cursor:pointer}
-.hero{max-width:1200px;margin:auto;padding:28px 16px 10px;display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center}
-.hero h1{font-size:38px;line-height:1.2}
-.hero h1 b{color:var(--gold)}
-.hero p{color:var(--muted);margin:12px 0 18px;line-height:1.7}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
-.btn{background:var(--gold);color:#0A1628;padding:12px 22px;border-radius:999px;font-weight:900;border:0;cursor:pointer}
-.btn2{background:transparent;color:#fff;border:1px solid #ffffff33;padding:12px 22px;border-radius:999px;font-weight:700;cursor:pointer}
-.hero-card{background:linear-gradient(135deg,#1B2F52,#0A1628);border:1px solid #D4AF3766;border-radius:20px;padding:18px;text-align:center}
-.hero-card img{width:100%;height:220px;object-fit:cover;border-radius:14px}
-.hero-card h3{margin-top:12px}
-.badge{display:inline-block;background:#D4AF37;color:#0A1628;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:900;margin-bottom:8px}
-.cats{max-width:1200px;margin:auto;padding:18px 16px;display:flex;gap:8px;overflow:auto}
-.cat{white-space:nowrap;background:var(--navy2);border:1px solid #ffffff1a;padding:9px 16px;border-radius:999px;cursor:pointer}
-.cat.active{background:var(--gold);color:#0A1628;font-weight:900}
-.section{max-width:1200px;margin:auto;padding:10px 16px 30px}
-.section h2{font-size:22px;margin:14px 0}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.card{background:#fff;color:#111;border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
-.card img{width:100%;height:190px;object-fit:cover}
-.card-body{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
-.store{font-size:12px;color:#888;font-weight:700}
-.card h3{font-size:16px;line-height:1.4;min-height:44px}
-.rating{color:#F5A623;font-size:13px}
-.price{font-size:20px;font-weight:900}
-.price s{font-size:13px;color:#999;font-weight:400}
-.buy{margin-top:auto;background:#0A1628;color:#fff;border:0;padding:11px;border-radius:12px;font-weight:900;cursor:pointer}
-.buy:hover{background:var(--gold);color:#0A1628}
-.buy.amazon{background:#FF9900;color:#111}
-.buy.aliexpress{background:#E62E04;color:#fff}
-.buy.ebay{background:#3665F3;color:#fff}
-.note{text-align:center;color:var(--muted);font-size:13px;padding:0 16px 20px;line-height:1.7}
-footer{background:#07101F;padding:24px 16px;text-align:center;color:#9AA8C0;font-size:13px;line-height:1.8}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}.hero h1{font-size:30px}.search{order:3;max-width:100%}.top{flex-wrap:wrap}.card img{height:150px}}
-@media(max-width:420px){.grid{grid-template-columns:1fr 1fr;gap:10px}.card img{height:130px}}
-</style>
-</head>
+body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff;text-align:center}
+header{padding:30px 15px;background:#0B1D3A;border-bottom:3px solid #C9A227}
+h1{color:#C9A227;font-size:32px;margin:0}
+p{color:#ddd}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:15px}
+.card{background:#fff;color:#111;border-radius:16px;overflow:hidden;padding-bottom:12px}
+.card img{width:100%;height:140px;object-fit:cover}
+.card h3{font-size:15px;margin:8px}
+.price{color:#B12704;font-weight:800;font-size:18px}
+.buy{display:block;margin:10px;background:#FF9900;color:#000;padding:12px;border-radius:10px;text-decoration:none;font-weight:800}
+.buy2{display:block;margin:10px;background:#131921;color:#fff;padding:12px;border-radius:10px;text-decoration:none;font-weight:800}
+</style></head>
 <body>
-
-<header>
-<div class="top">
-<a class="logo" href="#">ديرتنا<span>DEERTNA • SHOP SMART</span></a>
-<div class="search"><input id="searchInput" placeholder="دور على منتج... سماعات، ساعة، عطر..."><button onclick="doSearch()">بحث</button></div>
-<a href="#products" class="btn" style="padding:10px 16px">تسوّق الآن</a>
+<header><h1>ديرتنا 🇱🇾</h1><p>تسوّق من أمازون - توصيل سريع</p><p>اضغط على أي زر، يفتحلك أمازون طول</p></header>
+<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"><h3>سماعات بلوتوث</h3><div class="price">$24.99</div><a class="buy" href="https://www.amazon.com/s?k=headphones" target="_blank">اشتري من أمازون ↗</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"><h3>ساعة ذكية</h3><div class="price">$39.99</div><a class="buy" href="https://www.amazon.com/s?k=smart+watch" target="_blank">اشتري من أمازون ↗</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600"><h3>ساعة رياضية</h3><div class="price">$59.99</div><a class="buy" href="https://www.amazon.com/s?k=smartwatch" target="_blank">اشتري من أمازون ↗</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=600"><h3>سماعات ألعاب</h3><div class="price">$29.99</div><a class="buy" href="https://www.amazon.com/s?k=gaming+headset" target="_blank">اشتري من أمازون ↗</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600"><h3>عطر نسائي</h3><div class="price">$19.99</div><a class="buy" href="https://www.amazon.com/s?k=perfume+women" target="_blank">اشتري من أمازون ↗</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600"><h3>كاميرا</h3><div class="price">$89.99</div><a class="buy" href="https://www.amazon.com/s?k=camera" target="_blank">اشتري من أمازون ↗</a></div>
 </div>
-</header>
-
-<div class="hero">
-<div>
-<span class="badge">✦ عروض اليوم • شحن سريع • متاجر موثوقة</span>
-<h1>تسوّق من <b>أمازون و AliExpress و eBay</b><br>في مكان واحد.</h1>
-<p>اخترنالك أفضل المنتجات، بأفضل سعر. اضغط اشتري الآن، وكمّل الشراء في المتجر الأصلي بأمان.</p>
-<div class="hero-btns"><button class="btn" onclick="filterCat('all')">اكتشف العروض ↓</button><button class="btn2" onclick="filterCat('electronics')">إلكترونات</button></div>
-</div>
-<div class="hero-card">
-<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80" alt="سماعات">
-<h3>سماعات برو - خصم 35%</h3><p style="color:#D4AF37;font-weight:900">من 149 ر
+<a class="buy2" href="https://www.amazon.com" target="_blank">فتح أمازون كله ↗</a>
+<p style="font-size:12px;color:#aaa;padding:20px">ديرتنا - روابط أفلييت</p>
+</body></html>
