@@ -1,105 +1,23 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ديرتنا | DEERTNA</title>
-  <style>
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui;background:#071226;color:#fff;padding-bottom:80px}
-    header{position:sticky;top:0;z-index:10;background:#071226cc;backdrop-filter:blur(10px);padding:12px;text-align:center}
-    header b{font-size:22px;letter-spacing:1px}
-    header b span{color:#FF9900}
-    header p{margin:2px 0 0;font-size:11px;color:#9aa8c0}
-    .warn{background:#FFD700;color:#000;text-align:center;padding:10px;font-weight:800;font-size:12px}
-    .search{padding:10px 12px 0}
-    .search input{width:100%;padding:14px 16px;border-radius:99px;border:1px solid #2a3a5a;background:#0f1e3a;color:#fff;outline:none;font-size:14px}
-    .cats{display:flex;gap:8px;overflow-x:auto;padding:12px;scrollbar-width:none}
-    .cats button{white-space:nowrap;border:1px solid #2a3a5a;background:#0f1e3a;color:#fff;padding:8px 14px;border-radius:99px;cursor:pointer}
-    .cats button.on{background:#FF9900;color:#000;border-color:#FF9900;font-weight:800}
-    .grid{padding:0 12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-    .card{background:#0f1e3a;border:1px solid #1e2f52;border-radius:16px;overflow:hidden}
-    .card img{width:100%;height:150px;object-fit:cover;display:block}
-    .card h3{margin:8px 8px 2px;font-size:13px;min-height:32px}
-    .card .p{margin:0 8px;color:#FFC107;font-weight:900}
-    .card .old{color:#7a8aa8;font-size:11px;text-decoration:line-through;margin-right:6px}
-    .buy{display:block;margin:8px;background:#FF9900;color:#000;text-align:center;padding:11px;border-radius:12px;text-decoration:none;font-weight:900}
-    .count{text-align:center;color:#9aa8c0;font-size:12px;padding:10px}
-  </style>
-</head>
-<body>
-  <header>
-    <b>ديرتنا <span>DEERTNA</span></b>
-    <p>أفضل العروض من أمازون - محدثة الآن</p>
-  </header>
-  <div class="warn">⚠️ الصور توضيحية، قد تختلف عن المنتج الأصلي</div>
-  <div class="search"><input id="s" placeholder="🔍 دور: نايكي، عطر، ساعة..." oninput="go()"></div>
-  <div class="cats" id="cats"></div>
-  <div class="count" id="count"></div>
-  <div class="grid" id="shop"></div>
-
-  <script>
-    var D = [
-      ["حذاء نايكي احمر","نايكي",150,199,"photo-1542291026-7eec264c27ff","احذية"],
-      ["سماعات سوني","سوني",89,129,"photo-1505740420928-5e560c06d30e","صوتيات"],
-      ["عطر ديور","ديور",120,180,"photo-1541643600914-78b084683601","عطور"],
-      ["ساعة ذكية","ساعة",199,299,"photo-1523275335684-37898b6baf30","ساعات"],
-      ["كاميرا كانون","كانون",250,350,"photo-1526170375885-4d8ecf77b99f","كاميرات"],
-      ["نظارة شمسية","نظارة",75,110,"photo-1572635196237-14b3f281503f","نظارات"],
-      ["شنطة","شنطة",95,140,"photo-1548036328-c9fa89d128fa","شنط"],
-      ["جاكيت جلد","جاكيت",110,160,"photo-1551028719-00167b16eac5","ملابس"],
-      ["تيشيرت ابيض","تيشيرت",35,55,"photo-1521572163474-6864f9cf17ab","ملابس"],
-      ["ساعة يد","ساعة",220,300,"photo-1524805444758-089113d48a6d","ساعات"],
-      ["حذاء نايكي ابيض","نايكي",140,190,"photo-1595950653106-6c9ebd614d3a","احذية"],
-      ["سماعات ابيض","سماعات",75,99,"photo-1583394838336-acd977736f90","صوتيات"],
-      ["عطر شانيل","شانيل",135,190,"photo-1592945403244-b3fbafd7f539","عطور"]
-    ];
-
-    var activeCat = "الكل";
-    var catsEl = document.getElementById("cats");
-    var shopEl = document.getElementById("shop");
-    var countEl = document.getElementById("count");
-    var searchEl = document.getElementById("s");
-
-    function initCats() {
-      var cats = ["الكل"];
-      D.forEach(function(item) {
-        if (cats.indexOf(item[5]) === -1) cats.push(item[5]);
-      });
-      catsEl.innerHTML = cats.map(function(c) {
-        return '<button class="' + (c === activeCat ? "on" : "") + '" onclick="setCat(\'' + c + '\')">' + c + '</button>';
-      }).join("");
-    }
-
-    function setCat(c) {
-      activeCat = c;
-      initCats();
-      go();
-    }
-
-    function go() {
-      var q = searchEl.value.trim().toLowerCase();
-      var list = D.filter(function(item) {
-        var matchCat = (activeCat === "الكل" || item[5] === activeCat);
-        var matchText = !q || item[0].toLowerCase().indexOf(q) !== -1 || item[1].toLowerCase().indexOf(q) !== -1 || item[5].toLowerCase().indexOf(q) !== -1;
-        return matchCat && matchText;
-      });
-
-      countEl.textContent = "عدد المنتجات: " + list.length;
-      shopEl.innerHTML = list.map(function(item) {
-        var imgUrl = "https://unsplash.com" + item[4] + "?auto=format&fit=crop&w=600&q=80";
-        var searchUrl = "https://amazon.com" + encodeURIComponent(item[0]);
-        return '<div class="card">' +
-          '<img src="' + imgUrl + '" alt="' + item[0] + '" loading="lazy">' +
-          '<h3>' + item[0] + '</h3>' +
-          '<div class="p">$' + item[2] + '<span class="old">$' + item[3] + '</span></div>' +
-          '<a class="buy" href="' + searchUrl + '" target="_blank" rel="noopener">اطلب الآن</a>' +
-          '</div>';
-      }).join("");
-    }
-
-    initCats();
-    go();
-  </script>
-</body>
-</html>
+<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا | DEERTNA</title>
+<style>*{box-sizing:border-box}body{margin:0;font-family:system-ui;background:#071226;color:#fff;padding-bottom:80px}header{position:sticky;top:0;z-index:10;background:#071226cc;backdrop-filter:blur(10px);padding:12px;text-align:center}header b{font-size:22px}header b span{color:#FF9900}header p{margin:2px 0 0;font-size:11px;color:#9aa8c0}.warn{background:#FFD700;color:#000;text-align:center;padding:10px;font-weight:800;font-size:12px}.search{padding:10px 12px 0}.search input{width:100%;padding:14px 16px;border-radius:99px;border:1px solid #2a3a5a;background:#0f1e3a;color:#fff;outline:none}.cats{display:flex;gap:8px;overflow-x:auto;padding:12px}.cats button{white-space:nowrap;border:1px solid #2a3a5a;background:#0f1e3a;color:#fff;padding:8px 14px;border-radius:99px;cursor:pointer}.cats button.on{background:#FF9900;color:#000;font-weight:800}.grid{padding:0 12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:#0f1e3a;border:1px solid #1e2f52;border-radius:16px;overflow:hidden}.card img{width:100%;height:150px;object-fit:cover}.card h3{margin:8px;font-size:13px;min-height:32px}.card .p{margin:0 8px;color:#FFC107;font-weight:900}.card .old{color:#7a8aa8;font-size:11px;text-decoration:line-through;margin-right:6px}.buy{display:block;margin:8px;background:#FF9900;color:#000;text-align:center;padding:11px;border-radius:12px;text-decoration:none;font-weight:900}.count{text-align:center;color:#9aa8c0;font-size:12px;padding:10px}</style></head><body>
+<header><b>ديرتنا <span>DEERTNA</span></b><p>أفضل العروض من أمازون - محدثة الآن</p></header>
+<div class="warn">⚠️ الصور توضيحية، قد تختلف عن المنتج الأصلي</div>
+<div class="search"><input id="s" placeholder="🔍 دور: نايكي، عطر، ساعة..." oninput="go()"></div>
+<div class="cats" id="cats"></div>
+<div class="count" id="count"></div>
+<div class="grid" id="shop"></div>
+<script>
+var D=[
+["حذاء نايكي احمر","نايكي",150,199,"photo-1542291026-7eec264c27ff["نظارة سوداء","نظارة",85,120,"photo-1511499767150-a48a237f0083","نظارات"],
+["شنطة سفر","سفر",120,170,"photo-1553062407-98eeb64c6a62","شنط"],
+["جاكيت شتوي","جاكيت",140,190,"photo-1544022613-e87ca75a784a","ملابس"],
+["تيشيرت اسود","تيشيرت",40,60,"photo-1576566588028-4147f3842f27","ملابس"],
+["ساعة رولكس","رولكس",450,600,"photo-1523170335258-f5ed11844a49","ساعات"],
+["حذاء كاجوال","حذاء",110,150,"photo-1560343090-f0409e92791a","احذية"],
+["سماعات جيمنج","جيمنج",120,170,"photo-1599669454699-248893623440","صوتيات"],
+["عطر نسائي","عطر",105,150,"photo-1587017539504-67cfbddac569","عطور"],
+["ساعة رياضية","ساعة",170,230,"photo-1508685091914-9f1863f9f5b5","ساعات"],
+["كاميرا فورية","كاميرا",90,130,"photo-1526170375885-4d8ecf77b99f","كاميرات"],
+["نظارة طبية","نظارة",55,80,"photo-1574258495973-f010dfbb5371","نظارات"],
+["شنطة ظهر","شنطة",80,110,"photo-1553062407-98eeb64c6a62
