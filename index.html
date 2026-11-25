@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا | DEERTNA</title>
-<style>*{box-sizing:border-box}body{margin:0;font-family:system-ui;background:#071226;color:#fff;padding-bottom:80px}header{position:sticky;top:0;z-index:10;background:#071226cc;backdrop-filter:blur(10px);padding:12px;text-align:center}header b{font-size:22px}header b span{color:#FF9900}header p{margin:2px 0 0;font-size:11px;color:#9aa8c0}.warn{background:#FFD700;color:#000;text-align:center;padding:10px;font-weight:800;font-size:12px}.search{padding:10px 12px 0}.search input{width:100%;padding:14px 16px;border-radius:99px;border:1px solid #2a3a5a;background:#0f1e3a;color:#fff;outline:none}.cats{display:flex;gap:8px;overflow-x:auto;padding:12px}.cats button{white-space:nowrap;border:1px solid #2a3a5a;background:#0f1e3a;color:#fff;padding:8px 14px;border-radius:99px;cursor:pointer}.cats button.on{background:#FF9900;color:#000;font-weight:800}.grid{padding:0 12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:#0f1e3a;border:1px solid #1e2f52;border-radius:16px;overflow:hidden}.card img{width:100%;height:150px;object-fit:cover}.card h3{margin:8px;font-size:13px;min-height:32px}.card .p{margin:0 8px;color:#FFC107;font-weight:900}.card .old{color:#7a8aa8;font-size:11px;text-decoration:line-through;margin-right:6px}.buy{display:block;margin:8px;background:#FF9900;color:#000;text-align:center;padding:11px;border-radius:12px;text-decoration:none;font-weight:900}.count{text-align:center;color:#9aa8c0;font-size:12px;padding:10px}</style></head><body>
-<header><b>ديرتنا <span>DEERTNA</span></b><p>أفضل العروض من أمازون - محدثة الآن</p></header>
-<div class="warn">⚠️ الصور توضيحية، قد تختلف عن المنتج الأصلي</div>
-<div class="search"><input id="s" placeholder="🔍 دور: نايكي، عطر، ساعة..." oninput="go()"></div>
-<div class="cats" id="cats"></div>
-<div class="count" id="count"></div>
-<div class="grid" id="shop"></div>
-<script>
-var D=[
-["حذاء نايكي احمر","نايكي",150,199,"photo-1542291026-7eec264c27ff["نظارة سوداء","نظارة",85,120,"photo-1511499767150-a48a237f0083","نظارات"],
-["شنطة سفر","سفر",120,170,"photo-1553062407-98eeb64c6a62","شنط"],
-["جاكيت شتوي","جاكيت",140,190,"photo-1544022613-e87ca75a784a","ملابس"],
-["تيشيرت اسود","تيشيرت",40,60,"photo-1576566588028-4147f3842f27","ملابس"],
-["ساعة رولكس","رولكس",450,600,"photo-1523170335258-f5ed11844a49","ساعات"],
-["حذاء كاجوال","حذاء",110,150,"photo-1560343090-f0409e92791a","احذية"],
-["سماعات جيمنج","جيمنج",120,170,"photo-1599669454699-248893623440","صوتيات"],
-["عطر نسائي","عطر",105,150,"photo-1587017539504-67cfbddac569","عطور"],
-["ساعة رياضية","ساعة",170,230,"photo-1508685091914-9f1863f9f5b5","ساعات"],
-["كاميرا فورية","كاميرا",90,130,"photo-1526170375885-4d8ecf77b99f","كاميرات"],
-["نظارة طبية","نظارة",55,80,"photo-1574258495973-f010dfbb5371","نظارات"],
-["شنطة ظهر","شنطة",80,110,"photo-1553062407-98eeb64c6a62
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أفضل عروض أمازون</title>
+<style>
+body{font-family:Arial; background:#f2f2f2; margin:0; text-align:center}
+header{background:#131921; color:#fff; padding:25px}
+header h1{margin:0}
+header p{color:#FF9900}
+.container{display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px}
+.card{background:#fff; width:300px; border-radius:15px; padding:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+.card img{width:100%; height:220px; object-fit:contain}
+.price{color:#B12704; font-size:20px; font-weight:bold}
+.btn{display:inline-block; background:#FF9900; color:#000; padding:12px 25px; font-weight:bold; border-radius:10px; text-decoration:none; margin-top:10px}
+.badge{background:#CC0C39; color:#fff; padding:5px 10px; border-radius:20px; font-size:12px}
+footer{background:#131921; color:#fff; padding:15px; font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🔥 أفضل عروض أمازون اليوم</h1
