@@ -43,4 +43,44 @@ var cats = [
 ["سماعة بلوتوث","bluetooth speaker","photo-1608043152269-423dbba4e7e1"],
 ["شاحن","charger","photo-1583863788434-e58a36330cf0"],
 ["باور بانك","power bank","photo-1609091839311-d5365f9ff1c5"],
-["دراجة","bicycle","photo-1485965120184-e220f721
+["دراجة","bicycle","photo-1485965120184-e220f721d03e"],
+["كرة قدم","football","photo-1579952363873-27f3bade9f55"],
+["مكياج","makeup","photo-1596462502278-27bfdc403348"],
+["كريم","skincare","photo-1620916566398-39f1143ab7be"],
+["لعبة","toy","photo-1558060370-d644479cb6f7"],
+["ساعة حائط","wall clock","photo-1563861826100-9cb868fdbe1c"]
+];
+var brands = ["Sony","JBL","Anker","Apple","Samsung","Nike","Adidas","Xiaomi","Huawei","Logitech","Dior","Chanel","Puma","Oraimo","Baseus","Lenovo","HP","Canon","Gucci","Zara"];
+var colors = ["اسود","ابيض","ازرق","احمر","اخضر","رمادي","ذهبي","وردي","بني","فضي"];
+var shop = document.getElementById("shop");
+var html = "";
+var total = 0;
+for(var c=0;c<25;c++){
+  for(var b=0;b<20;b++){
+    for(var col=0;col<2;col++){
+      total++;
+      var brand = brands[(b+total)%20];
+      var color = colors[(total+col)%10];
+      var price = 29 + (total*13)%250;
+      var imgUrl = "https://images.unsplash.com/" + cats[c][2] + "?w=600";
+      var link = "https://www.amazon.com/s?k=" + cats[c][1] + " " + brand + "&tag=deertna-20";
+      var name = cats[c][0] + " " + brand + " - " + color;
+      html += '<div class="card" data-name="' + name + ' ' + cats[c][0] + ' ' + brand + '"><img src="' + imgUrl + '"><h3>' + name + '</h3><div class="price">من ' + price + ' ر.س</div><a class="buy" href="' + link + '" target="_blank">اشتري الان</a></div>';
+    }
+  }
+}
+shop.innerHTML = html;
+document.getElementById("count").innerText = total + " منتج";
+function doFilter(){
+  var v = document.getElementById("search").value.toLowerCase();
+  var cards = document.querySelectorAll(".card");
+  var shown = 0;
+  for(var k=0;k<cards.length;k++){
+    var show = cards[k].getAttribute("data-name").toLowerCase().indexOf(v) > -1 || v == "";
+    cards[k].style.display = show ? "block" : "none";
+    if(show) shown++;
+  }
+  document.getElementById("count").innerText = shown + " منتج";
+}
+</script>
+</body></html>
