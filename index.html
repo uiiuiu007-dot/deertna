@@ -1,9 +1,25 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا - 50 منتج</title>
-<style>body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}header{padding:12px;text-align:center;font-weight:900;font-size:20px}.warning{background:#FFD700;color:#000;text-align:center;padding:12px;font-weight:800;font-size:13px}.grid{padding:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:#13294d;border-radius:14px;overflow:hidden}.card img{width:100%;height:160px;object-fit:cover}.card h3{text-align:center;font-size:13px;margin:8px}.price{text-align:center;color:#C9A227;font-weight:800}.buy{display:block;margin:8px;background:#FF9900;color:#000;text-align:center;padding:10px;border-radius:10px;text-decoration:none;font-weight:800}</style></head><body>
-<header>ديرتنا - 50 منتج</header>
-<div class="warning">⚠️ تنبيه: قد تكون هذه الصور غير مطابقة للمنتج الأصلي - الصور توضيحية فقط</div>
+<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا | DEERTNA</title>
+<style>*{box-sizing:border-box}body{margin:0;font-family:system-ui;background:#071226;color:#fff;padding-bottom:80px}header{position:sticky;top:0;z-index:10;background:#071226cc;backdrop-filter:blur(10px);padding:12px;text-align:center}header b{font-size:22px;letter-spacing:1px}header b span{color:#FF9900}header p{margin:2px 0 0;font-size:11px;color:#9aa8c0}.warn{background:#FFD700;color:#000;text-align:center;padding:10px;font-weight:800;font-size:12px}.search{padding:10px 12px 0}.search input{width:100%;padding:14px 16px;border-radius:99px;border:1px solid #2a3a5a;background:#0f1e3a;color:#fff;outline:none;font-size:14px}.cats{display:flex;gap:8px;overflow-x:auto;padding:12px;scrollbar-width:none}.cats button{white-space:nowrap;border:1px solid #2a3a5a;background:#0f1e3a;color:#fff;padding:8px 14px;border-radius:99px;cursor:pointer}.cats button.on{background:#FF9900;color:#000;border-color:#FF9900;font-weight:800}.grid{padding:0 12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:#0f1e3a;border:1px solid #1e2f52;border-radius:16px;overflow:hidden}.card img{width:100%;height:150px;object-fit:cover;display:block}.card h3{margin:8px 8px 2px;font-size:13px;min-height:32px}.card .p{margin:0 8px;color:#FFC107;font-weight:900}.card .old{color:#7a8aa8;font-size:11px;text-decoration:line-through;margin-right:6px}.buy{display:block;margin:8px;background:#FF9900;color:#000;text-align:center;padding:11px;border-radius:12px;text-decoration:none;font-weight:900}.count{text-align:center;color:#9aa8c0;font-size:12px;padding:10px}</style></head><body>
+<header><b>ديرتنا <span>DEERTNA</span></b><p>أفضل العروض من أمازون - محدثة الآن</p></header>
+<div class="warn">⚠️ الصور توضيحية، قد تختلف عن المنتج الأصلي</div>
+<div class="search"><input id="s" placeholder="🔍 دور: نايكي، عطر، ساعة..." oninput="go()"></div>
+<div class="cats" id="cats"></div>
+<div class="count" id="count"></div>
 <div class="grid" id="shop"></div>
 <script>
-var P=[
-["حذاء نايكي احمر","nike red shoes",150,"photo-1542291026-7eec264
+var D=[
+["حذاء نايكي احمر","نايكي",150,199,"photo-1542291026-7eec264c27ff","احذية"],
+["سماعات سوني","سوني",89,129,"photo-1505740420928-5e560c06d30e","صوتيات"],
+["عطر ديور","ديور",120,180,"photo-1541643600914-78b084683601","عطور"],
+["ساعة ذكية","ساعة",199,299,"photo-1523275335684-37898b6baf30","ساعات"],
+["كاميرا كانون","كانون",250,350,"photo-1526170375885-4d8ecf77b99f","كاميرات"],
+["نظارة شمسية","نظارة",75,110,"photo-1572635196237-14b3f281503f","نظارات"],
+["شنطة","شنطة",95,140,"photo-1548036328-c9fa89d128fa","شنط"],
+["جاكيت جلد","جاكيت",110,160,"photo-1551028719-00167b16eac5","ملابس"],
+["تيشيرت ابيض","تيشيرت",35,55,"photo-1521572163474-6864f9cf17ab","ملابس"],
+["ساعة يد","ساعة",220,300,"photo-1524805444758-089113d48a6d","ساعات"],
+["حذاء نايكي ابيض","نايكي",140,190,"photo-1595950653106-6c9ebd614d3a","احذية"],
+["سماعات ابيض","سماعات",75,99,"photo-1583394838336-acd977736f90","صوتيات"],
+["عطر شانيل","شانيل",135,190,"photo-1592945403244-b3fbafd7f539","عطور"],
+["ساعة ذكية
