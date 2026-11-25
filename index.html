@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ديرتنا | 1000 منتج مختلف</title>
+<title>ديرتنا | 1000 منتج</title>
 <style>
 body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}
-header{display:flex;justify-content:space-between;padding:12px 15px}
+header{display:flex;justify-content:space-between;padding:12px 15px;align-items:center}
 .logo{font-weight:900;font-size:22px}.logo span{color:#C9A227;font-size:11px;display:block}
 .count{background:#C9A227;color:#000;padding:8px 14px;border-radius:20px;font-weight:800;font-size:13px}
-.search-box{padding:10px 15px;text-align:center}
-.search-box input{width:100%;padding:14px;border-radius:25px;border:2px solid #C9A227;font-size:16px;text-align:center}
-.hero{text-align:center;padding:5px 15px}.hero b{color:#C9A227}
+.search-box{padding:10px 15px;display:flex;gap:8px}
+.search-box input{flex:1;padding:14px;border-radius:25px;border:2px solid #C9A227;font-size:16px;text-align:center}
+.search-box button{background:#C9A227;border:none;padding:0 20px;border-radius:25px;font-weight:800}
 .grid{padding:15px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .card{background:#13294d;border-radius:16px;overflow:hidden;border:1px solid #333}
 .card img{width:100%;height:150px;object-fit:cover;background:#fff}
 .card h3{text-align:center;margin:10px 5px;font-size:14px;min-height:36px}
 .price{text-align:center;color:#C9A227;font-weight:800}
 .buy{display:block;margin:10px;background:#FF9900;color:#000;text-align:center;padding:11px;border-radius:10px;text-decoration:none;font-weight:800}
+#msg{text-align:center;padding:20px}
 </style></head>
 <body>
-<header><div class="logo">ديرتنا<span>DEERTNA - 1000 منتج مختلف</span></div><div class="count" id="count">1000 منتج</div></header>
-<div class="search-box"><input id="search" type="search" placeholder="دور على أي منتج..." oninput="doFilter()"></div>
-<div class="hero"><h1>كل منتج <b>بروحه</b>، ما فيش تكرار.</h1><p style="font-size:12px;color:#ccc">1000 منتج مختلف من امازون. As an Amazon Associate, Deertna earns from qualifying purchases.</p></div>
+<header><div class="logo">ديرتنا<span>DEERTNA</span></div><div class="count" id="count">1000 منتج</div></header>
+<div class="search-box">
+<input id="search" type="search" placeholder="دور: سماعات، عطر، ساعة..." oninput="doFilter()">
+<button onclick="doFilter()">بحث 🔍</button>
+</div>
+<div style="text-align:center;padding:0 15px"><p style="font-size:12px;color:#ccc">1000 منتج مختلف، كل واحد بروحه. As an Amazon Associate, Deertna earns from qualifying purchases.</p></div>
+<div id="msg">جاري تحميل المنتجات...</div>
 <div class="grid" id="shop"></div>
 <script>
 var cats = [
@@ -29,7 +34,7 @@ var cats = [
 ["عطر","perfume","photo-1541643600914-78b084683601"],
 ["كاميرا","camera","photo-1526170375885-4d8ecf77b99f"],
 ["حذاء رياضي","sneakers","photo-1542291026-7eec264c27ff"],
-["نظارة شمسية","sunglasses","photo-1572635196237-14b3f281503f"],
+["نظارة","sunglasses","photo-1572635196237-14b3f281503f"],
 ["شنطة","bag","photo-1548036328-c9fa89d128fa"],
 ["كيبورد","keyboard","photo-1587829741301-dc798b83add3"],
 ["ماوس","mouse","photo-1527864550417-7fd91fc51a46"],
@@ -44,43 +49,10 @@ var cats = [
 ["شاحن","charger","photo-1583863788434-e58a36330cf0"],
 ["باور بانك","power bank","photo-1609091839311-d5365f9ff1c5"],
 ["دراجة","bicycle","photo-1485965120184-e220f721d03e"],
-["كرة قدم","football","photo-1579952363873-27f3bade9f55"],
+["كرة","football","photo-1579952363873-27f3bade9f55"],
 ["مكياج","makeup","photo-1596462502278-27bfdc403348"],
 ["كريم","skincare","photo-1620916566398-39f1143ab7be"],
 ["لعبة","toy","photo-1558060370-d644479cb6f7"],
 ["ساعة حائط","wall clock","photo-1563861826100-9cb868fdbe1c"]
 ];
-var brands = ["Sony","JBL","Anker","Apple","Samsung","Nike","Adidas","Xiaomi","Huawei","Logitech","Dior","Chanel","Puma","Oraimo","Baseus","Lenovo","HP","Canon","Gucci","Zara"];
-var colors = ["اسود","ابيض","ازرق","احمر","اخضر","رمادي","ذهبي","وردي","بني","فضي"];
-var shop = document.getElementById("shop");
-var html = "";
-var total = 0;
-for(var c=0;c<25;c++){
-  for(var b=0;b<20;b++){
-    for(var col=0;col<2;col++){
-      total++;
-      var brand = brands[(b+total)%20];
-      var color = colors[(total+col)%10];
-      var price = 29 + (total*13)%250;
-      var imgUrl = "https://images.unsplash.com/" + cats[c][2] + "?w=600";
-      var link = "https://www.amazon.com/s?k=" + cats[c][1] + " " + brand + "&tag=deertna-20";
-      var name = cats[c][0] + " " + brand + " - " + color;
-      html += '<div class="card" data-name="' + name + ' ' + cats[c][0] + ' ' + brand + '"><img src="' + imgUrl + '"><h3>' + name + '</h3><div class="price">من ' + price + ' ر.س</div><a class="buy" href="' + link + '" target="_blank">اشتري الان</a></div>';
-    }
-  }
-}
-shop.innerHTML = html;
-document.getElementById("count").innerText = total + " منتج";
-function doFilter(){
-  var v = document.getElementById("search").value.toLowerCase();
-  var cards = document.querySelectorAll(".card");
-  var shown = 0;
-  for(var k=0;k<cards.length;k++){
-    var show = cards[k].getAttribute("data-name").toLowerCase().indexOf(v) > -1 || v == "";
-    cards[k].style.display = show ? "block" : "none";
-    if(show) shown++;
-  }
-  document.getElementById("count").innerText = shown + " منتج";
-}
-</script>
-</body></html>
+var brands = ["Sony","JBL","Anker","Apple","Samsung","Nike","Adidas","Xiaomi","Huawei
