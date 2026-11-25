@@ -1,29 +1,22 @@
-!DOCTYPE html>
-<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا</title><style>body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}header{display:flex;justify-content:space-between;padding:12px} .count{background:#C9A227;color:#000;padding:8px 14px;border-radius:20px;font-weight:800}.search-box{padding:10px;display:flex;gap:8px}.search-box input{flex:1;padding:14px;border-radius:25px;border:2px solid #C9A227;text-align:center}.search-box button{background:#C9A227;border:none;padding:0 18px;border-radius:25px;font-weight:800}.grid{padding:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:#13294d;border-radius:14px;overflow:hidden}.card img{width:100%;height:140px;object-fit:cover}.card h3{text-align:center;font-size:13px;margin:8px}.price{text-align:center;color:#C9A227;font-weight:800}.buy{display:block;margin:8px;background:#FF9900;color:#000;text-align:center;padding:10px;border-radius:10px;text-decoration:none;font-weight:800}</style></head><body>
-<header><div style="font-weight:900;font-size:22px">ديرتنا<span style="display:block;color:#C9A227;font-size:11px">DEERTNA</span></div><div class="count" id="count">...</div></header>
-<div class="search-box"><input id="search" placeholder="دور: سماعات، عطر..." oninput="doFilter()"><button onclick="doFilter()">بحث</button></div>
-<button onclick="shuffleNow()" style="display:block;margin:0 auto 10px;padding:10px 20px;border-radius:20px;border:none;font-weight:800">🔀 خلط عشوائي</button>
-<div id="msg" style="text-align:center;padding:20px">جاري التحميل...</div>
-<div class="grid" id="shop"></div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا</title>
+<style>body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}header{display:flex;justify-content:space-between;padding:12px}.count{background:#C9A227;color:#000;padding:8px 14px;border-radius:20px;font-weight:800}.search-box{padding:10px;display:flex;gap:8px}.search-box input{flex:1;padding:14px;border-radius:25px;border:2px solid #C9A227;text-align:center}.grid{padding:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:#13294d;border-radius:14px;overflow:hidden}.card img{width:100%;height:140px;object-fit:cover}.card h3{text-align:center;font-size:13px;margin:8px}.price{text-align:center;color:#C9A227;font-weight:800}.buy{display:block;margin:8px;background:#FF9900;color:#000;text-align:center;padding:10px;border-radius:10px;text-decoration:none;font-weight:800}</style></head><body>
+<header><div style="font-weight:900">ديرتنا</div><div class="count" id="count">منتجاتنا</div></header>
+<div class="search-box"><input id="search" placeholder="دور: سماعات، عطر..." oninput="doFilter()"></div>
+<div class="grid" id="shop">
+<div class="card"><img src="https://picsum.photos/seed/1/600/400"><h3>سماعات Sony - اسود</h3><div class="price">من 89 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=headphones+Sony&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://picsum.photos/seed/2/600/400"><h3>عطر Dior - ذهبي</h3><div class="price">من 120 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=perfume+Dior&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://picsum.photos/seed/3/600/400"><h3>ساعة ذكية Apple - ابيض</h3><div class="price">من 199 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=smart+watch+Apple&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://picsum.photos/seed/4/600/400"><h3>حذاء Nike - احمر</h3><div class="price">من 150 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=sneakers+Nike&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://picsum.photos/seed/5/600/400"><h3>كاميرا Canon - اسود</h3><div class="price">من 250 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=camera+Canon&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://picsum.photos/seed/6/600/400"><h3>شنطة Gucci - بني</h3><div class="price">من 180 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=bag+Gucci&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://picsum.photos/seed/7/600/400"><h3>نظارة RayBan - اسود</h3><div class="price">من 75 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=sunglasses&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://picsum.photos/seed/8/600/400"><h3>لابتوب HP - فضي</h3><div class="price">من 999 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=laptop+HP&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://picsum.photos/seed/9/600/400"><h3>جاكيت Zara - ازرق</h3><div class="price">من 110 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=jacket&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://picsum.photos/seed/10/600/400"><h3>مكياج Chanel - وردي</h3><div class="price">من 95 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=makeup+Chanel&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://picsum.photos/seed/11/600/400"><h3>سماعة بلوتوث JBL - اخضر</h3><div class="price">من 65 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=bluetooth+speaker+JBL&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://picsum.photos/seed/12/600/400"><h3>دراجة Xiaomi - رمادي</h3><div class="price">من 300 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=bicycle&tag=deertna-20" target="_blank">اشتري الان</a></div>
+</div>
 <script>
-var names=["سماعات","ساعة ذكية","عطر","كاميرا","حذاء","نظارة","شنطة","كيبورد","ماوس","لابتوب","موبايل","مصباح","كرسي","جاكيت","تيشيرت","ساعة يد","سماعة بلوتوث","شاحن","باور بانك","دراجة","كرة","مكياج","كريم","لعبة","ساعة حائط"];
-var brands=["Sony","JBL","Anker","Apple","Samsung","Nike","Adidas","Xiaomi","Huawei","Logitech"];
-var colors=["اسود","ابيض","ازرق","احمر","اخضر","رمادي","ذهبي","وردي"];
-var all=[];
-for(var i=0;i<200;i++){
-var n=names[i%25]; var b=brands[i%10]; var col=colors[i%8];
-var name=n+" "+b+" - "+col+" "+(Math.floor(i/25)+1);
-var price=30+(i*17)%200;
-all.push({name:name, img:"https://picsum.photos/seed/deertna"+i+"/600/400", price:price, link:"https://www.amazon.com/s?k="+n+" "+b+"&tag=deertna-20"});
-}
-function render(list){
-var h="";
-for(var k=0;k<list.length;k++){h+='<div class="card"><img src="'+list[k].img+'"><h3>'+list[k].name+'</h3><div class="price">من '+list[k].price+' ر.س</div><a class="buy" href="'+list[k].link+'" target="_blank">اشتري الان</a></div>';}
-document.getElementById("shop").innerHTML=h;
-document.getElementById("count").innerText=list.length+" منتج";
-document.getElementById("msg").style.display="none";
-}
-all.sort(function(){return Math.random()-0.5});
-render(all);
-function shuffleNow(){all.sort(function(){return Math.random()-0.5});document.getElementById("search").value="";render(all);}
-function doFilter(){var v=document.getElementById("search").value.toLowerCase().trim();if(!v){render(all);return;}var
+function doFilter(){var v=document.getElementById("search").value.toLowerCase();var cards=document.querySelectorAll(".card");var n=0;for(var i=0;i<cards.length;i++){var t=cards[i].innerText.toLowerCase();var s=!v||t.indexOf(v)>-1;cards[i].style.display=s?"block":"none";if(s)n++;}document.getElementById("count").innerText=n+" منتج";}
+</script></body></html>
