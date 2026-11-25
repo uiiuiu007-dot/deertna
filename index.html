@@ -1,22 +1,11 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا</title>
-<style>body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}header{display:flex;justify-content:space-between;padding:12px}.count{background:#C9A227;color:#000;padding:8px 14px;border-radius:20px;font-weight:800}.warning{background:#FFD700;color:#000;text-align:center;padding:12px 10px;font-weight:800;font-size:13px;line-height:1.6}.warning span{display:block;font-size:11px;font-weight:400}.search-box{padding:10px;display:flex;gap:8px}.search-box input{flex:1;padding:14px;border-radius:25px;border:2px solid #C9A227;text-align:center}.grid{padding:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:#13294d;border-radius:14px;overflow:hidden}.card img{width:100%;height:160px;object-fit:cover}.card h3{text-align:center;font-size:13px;margin:8px}.price{text-align:center;color:#C9A227;font-weight:800}.buy{display:block;margin:8px;background:#FF9900;color:#000;text-align:center;padding:10px;border-radius:10px;text-decoration:none;font-weight:800}.footer{text-align:center;font-size:11px;color:#aaa;padding:15px;line-height:1.8}</style></head><body>
-<header><div style="font-weight:900">ديرتنا</div><div class="count" id="count">200 منتج</div></header>
-
-<div class="warning">⚠️ تنبيه: قد تكون هذه الصور غير مطابقة للمنتج الأصلي
-<span>الصور توضيحية فقط، تأكد من صورة و مواصفات المنتج الأصلية في صفحة أمازون قبل الشراء</span></div>
-
+<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ديرتنا - تسوق أفضل المنتجات من أمازون: عطور، ساعات، سماعات، أحذية نايكي، وأكثر.">
+<title>ديرتنا | تسوق من أمازون</title>
+<style>body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}header{display:flex;justify-content:space-between;padding:12px}.count{background:#C9A227;color:#000;padding:8px 14px;border-radius:20px;font-weight:800}.warning{background:#FFD700;color:#000;text-align:center;padding:12px 10px;font-weight:800;font-size:13px;line-height:1.6}.warning span{display:block;font-size:11px;font-weight:400}.search-box{padding:10px}.search-box input{width:100%;padding:14px;border-radius:25px;border:2px solid #C9A227;text-align:center;box-sizing:border-box}.grid{padding:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:#13294d;border-radius:14px;overflow:hidden}.card img{width:100%;height:160px;object-fit:cover}.card h3{text-align:center;font-size:13px;margin:8px}.price{text-align:center;color:#C9A227;font-weight:800}.buy{display:block;margin:8px;background:#FF9900;color:#000;text-align:center;padding:10px;border-radius:10px;text-decoration:none;font-weight:800}.footer{text-align:center;font-size:11px;color:#aaa;padding:15px;line-height:1.8}</style></head><body>
+<header><div style="font-weight:900">ديرتنا</div><div class="count">منتجاتنا</div></header>
+<div class="warning">⚠️ تنبيه: قد تكون هذه الصور غير مطابقة للمنتج الأصلي<span>الصور توضيحية فقط، تأكد من صورة و مواصفات المنتج الأصلية في صفحة أمازون قبل الشراء</span></div>
 <div class="search-box"><input id="search" placeholder="دور: حذاء نايكي احمر..." oninput="doFilter()"></div>
-<div class="grid" id="shop"></div>
-<div class="footer">الصور توضيحية و قد تختلف عن المنتج الأصلي.<br>As an Amazon Associate, Deertna earns from qualifying purchases.<br>يرجى مراجعة صفحة المنتج في أمازون للتأكد من الصورة و السعر و المواصفات.</div>
-<script>
-var data = [
-["حذاء نايكي","nike shoes",["photo-1542291026-7eec264c27ff","photo-1595950653106-6c9ebd614d3a","photo-1600185365483-26d7a4cc7519","photo-1560769629-975ec94e6a86"]],
-["سماعات سوني","sony headphones",["photo-1505740420928-5e560c06d30e","photo-1583394838336-acd977736f90","photo-1484704849700-f032a568e944","photo-1546435770-a3e426bf472b"]],
-["عطر ديور","dior perfume",["photo-1541643600914-78b084683601","photo-1592945403244-b3fbafd7f539","photo-1594035910387-fea47794261f","photo-1592945403244-b3fbafd7f539"]],
-["ساعة ذكية","smart watch",["photo-1523275335684-37898b6baf30","photo-1546868871-7041f2a55e12","photo-1579586337278-3befd40fd17a","photo-1434056886845-dac89ffe9b56"]],
-["كاميرا كانون","canon camera",["photo-1526170375885-4d8ecf77b99f","photo-1516035069371-29a1b244cc32","photo-1502920917128-1aa500764cbd","photo-1512790182412-b19e6d207a08"]],
-["نظارة شمسية","sunglasses",["photo-1572635196237-14b3f281503f","photo-1511499767150-a48a237f0083","photo-1508296695146-257a814070b4","photo-1577803645773-f96470509666"]],
-["شنطة","bag",["photo-1548036328-c9fa89d128fa","photo-1584917865442-de89df76afd3","photo-1590874103328-eac38a683ce7","photo-1553062407-98eeb64c6a62"]],
-["جاكيت","jacket",["photo-1551028719-00167b16eac5","photo-1591047139829-d91aecb6caea","photo-1543076447-215ad9ba6923","photo-1521223890158-f9f7c3d5d504"]],
-["تيشيرت","tshirt",["photo-1521572163474-6864f9cf17ab","photo-157656658
+<div class="grid" id="shop">
+<div class="card"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600"><h3>حذاء نايكي احمر</h3><div class="price">من 150 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=nike+red+shoes&tag=deertna-20" target="_blank">اشتري الان</a></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600"><h3>حذاء نايكي ابيض</h3><div class="
