@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ديرتنا | 1000 منتج من امازون</title>
+<title>ديرتنا | 1000 منتج مختلف</title>
 <style>
 body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}
 header{display:flex;justify-content:space-between;padding:12px 15px}
@@ -13,43 +13,34 @@ header{display:flex;justify-content:space-between;padding:12px 15px}
 .grid{padding:15px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .card{background:#13294d;border-radius:16px;overflow:hidden;border:1px solid #333}
 .card img{width:100%;height:150px;object-fit:cover;background:#fff}
-.card h3{text-align:center;margin:10px 5px;font-size:14px}
+.card h3{text-align:center;margin:10px 5px;font-size:14px;min-height:36px}
 .price{text-align:center;color:#C9A227;font-weight:800}
 .buy{display:block;margin:10px;background:#FF9900;color:#000;text-align:center;padding:11px;border-radius:10px;text-decoration:none;font-weight:800}
 </style></head>
 <body>
-<header><div class="logo">ديرتنا<span>DEERTNA - 1000 منتج</span></div><div class="count" id="count">1000 منتج</div></header>
+<header><div class="logo">ديرتنا<span>DEERTNA - 1000 منتج مختلف</span></div><div class="count" id="count">1000 منتج</div></header>
 <div class="search-box"><input id="search" type="search" placeholder="دور على أي منتج..." oninput="doFilter()"></div>
-<div class="hero"><h1>تسوق من <b>امازون</b> في مكان واحد.</h1><p style="font-size:12px;color:#ccc">1000 منتج، كلهم بكودك الخاص. As an Amazon Associate, Deertna earns from qualifying purchases.</p></div>
-<div class="grid" id="shop"><p id="loading" style="text-align:center">جاري تحميل المنتجات...</p></div>
+<div class="hero"><h1>كل منتج <b>بروحه</b>، ما فيش تكرار.</h1><p style="font-size:12px;color:#ccc">1000 منتج مختلف من امازون. As an Amazon Associate, Deertna earns from qualifying purchases.</p></div>
+<div class="grid" id="shop"></div>
 <script>
-var names = ["سماعات","ساعة ذكية","عطر","كاميرا","حذاء","نظارة","شنطة","كيبورد","ماوس","لابتوب","ايفون","مصباح","كرسي","جاكيت","تيشيرت","ساعة يد","سماعة بلوتوث","شاحن","باور بانك","دراجة","كرة","مكياج","كريم","لعبة","ساعة حائط"];
-var keys = ["headphones","smart watch","perfume","camera","sneakers","sunglasses","bag","keyboard","mouse","laptop","iphone","lamp","chair","jacket","tshirt","watch","bluetooth speaker","charger","power bank","bicycle","football","makeup","skincare","toy","wall clock"];
-var imgs = ["photo-1505740420928-5e560c06d30e","photo-1523275335684-37898b6baf30","photo-1541643600914-78b084683601","photo-1526170375885-4d8ecf77b99f","photo-1542291026-7eec264c27ff","photo-1572635196237-14b3f281503f","photo-1548036328-c9fa89d128fa","photo-1587829741301-dc798b83add3","photo-1527864550417-7fd91fc51a46","photo-1496181133206-80ce9b88a853","photo-1592750475338-74b7b21085ab","photo-1507473885765-e6ed057f782c","photo-1592078615290-033ee584e267","photo-1551028719-00167b16eac5","photo-1521572163474-6864f9cf17ab","photo-1524805444758-089113d48a6d","photo-1608043152269-423dbba4e7e1","photo-1583863788434-e58a36330cf0","photo-1609091839311-d5365f9ff1c5","photo-1485965120184-e220f721d03e","photo-1579952363873-27f3bade9f55","photo-1596462502278-27bfdc403348","photo-1620916566398-39f1143ab7be","photo-1558060370-d644479cb6f7","photo-1563861826100-9cb868fdbe1c"];
-var shop = document.getElementById("shop");
-var allHtml = "";
-var total = 0;
-for(var c=0;c<25;c++){
-  for(var i=1;i<=40;i++){
-    total++;
-    var price = 29 + (total % 200);
-    var imgUrl = "https://images.unsplash.com/" + imgs[c] + "?w=600";
-    var link = "https://www.amazon.com/s?k=" + keys[c] + "&tag=deertna-20";
-    allHtml += '<div class="card" data-name="' + names[c] + '"><img src="' + imgUrl + '"><h3>' + names[c] + ' موديل ' + i + '</h3><div class="price">من ' + price + ' ر.س</div><a class="buy" href="' + link + '" target="_blank">اشتري الان</a></div>';
-  }
-}
-shop.innerHTML = allHtml;
-document.getElementById("count").innerText = total + " منتج";
-function doFilter(){
-  var v = document.getElementById("search").value.toLowerCase();
-  var cards = document.querySelectorAll(".card");
-  var shown = 0;
-  for(var k=0;k<cards.length;k++){
-    var show = cards[k].getAttribute("data-name").toLowerCase().indexOf(v) > -1 || v == "";
-    cards[k].style.display = show ? "block" : "none";
-    if(show) shown++;
-  }
-  document.getElementById("count").innerText = shown + " منتج";
-}
-</script>
-</body></html>
+var cats = [
+["سماعات","headphones","photo-1505740420928-5e560c06d30e"],
+["ساعة ذكية","smart watch","photo-1523275335684-37898b6baf30"],
+["عطر","perfume","photo-1541643600914-78b084683601"],
+["كاميرا","camera","photo-1526170375885-4d8ecf77b99f"],
+["حذاء رياضي","sneakers","photo-1542291026-7eec264c27ff"],
+["نظارة شمسية","sunglasses","photo-1572635196237-14b3f281503f"],
+["شنطة","bag","photo-1548036328-c9fa89d128fa"],
+["كيبورد","keyboard","photo-1587829741301-dc798b83add3"],
+["ماوس","mouse","photo-1527864550417-7fd91fc51a46"],
+["لابتوب","laptop","photo-1496181133206-80ce9b88a853"],
+["موبايل","iphone","photo-1592750475338-74b7b21085ab"],
+["مصباح","lamp","photo-1507473885765-e6ed057f782c"],
+["كرسي","chair","photo-1592078615290-033ee584e267"],
+["جاكيت","jacket","photo-1551028719-00167b16eac5"],
+["تيشيرت","tshirt","photo-1521572163474-6864f9cf17ab"],
+["ساعة يد","watch","photo-1524805444758-089113d48a6d"],
+["سماعة بلوتوث","bluetooth speaker","photo-1608043152269-423dbba4e7e1"],
+["شاحن","charger","photo-1583863788434-e58a36330cf0"],
+["باور بانك","power bank","photo-1609091839311-d5365f9ff1c5"],
+["دراجة","bicycle","photo-1485965120184-e220f721
