@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ديرتنا | تسوق من أمازون</title>
+<title>ديرتنا | DEERTNA</title>
 <style>
-body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff;text-align:center}
-header{padding:30px 15px;background:#0B1D3A;border-bottom:3px solid #C9A227}
-h1{color:#C9A227;font-size:32px;margin:0}
-p{color:#ddd}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:15px}
-.card{background:#fff;color:#111;border-radius:16px;overflow:hidden;padding-bottom:12px}
-.card img{width:100%;height:140px;object-fit:cover}
-.card h3{font-size:15px;margin:8px}
-.price{color:#B12704;font-weight:800;font-size:18px}
-.buy{display:block;margin:10px;background:#FF9900;color:#000;padding:12px;border-radius:10px;text-decoration:none;font-weight:800}
-.buy2{display:block;margin:10px;background:#131921;color:#fff;padding:12px;border-radius:10px;text-decoration:none;font-weight:800}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 15px}
+.logo{font-weight:900;font-size:22px} .logo span{color:#C9A227;font-size:11px;display:block}
+.topbtn{background:#C9A227;color:#000;padding:9px 16px;border-radius:20px;text-decoration:none;font-weight:800;font-size:13px}
+/* البحث في النص فوق */
+.search-box{padding:5px 15px 15px;text-align:center}
+.search-box input{width:100%;max-width:500px;padding:14px 18px;border-radius:25px;border:2px solid #C9A227;background:#fff;color:#000;font-size:16px;text-align:center;outline:none}
+.search-box input::placeholder{color:#888}
+.hero{padding:5px 20px 15px;text-align:center}
+.hero h1{font-size:26px;line-height:1.4;margin:5px} .hero h1 b{color:#C9A227}
+.hero p{color:#ccc;font-size:13px}
+.filters{display:flex;gap:10px;justify-content:center;padding:0 15px}
+.filters a{padding:10px 20px;border-radius:25px;text-decoration:none;font-weight:700;font-size:14px}
+.f1{background:#C9A227;color:#000} .f2{background:#13294d;color:#fff;border:1px solid #333}
+.grid{padding:15px;display:grid;gap:15px}
+.card{background:#13294d;border-radius:18px;overflow:hidden;border:1px solid #1e3a5f}
+.card img{width:100%;height:210px;object-fit:cover}
+.card h3{text-align:center;margin:12px;font-size:17px}
+.price{text-align:center;color:#C9A227;font-weight:800}
+.buy{display:block;margin:12px;background:#FF9900;color:#000;text-align:center;padding:13px;border-radius:12px;text-decoration:none;font-weight:800}
 </style></head>
 <body>
-<header><h1>ديرتنا 🇱🇾</h1><p>تسوّق من أمازون - توصيل سريع</p><p>اضغط على أي زر، يفتحلك أمازون طول</p></header>
-<div class="grid">
-<div class="card"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"><h3>سماعات بلوتوث</h3><div class="price">$24.99</div><a class="buy" href="https://www.amazon.com/s?k=headphones" target="_blank">اشتري من أمازون ↗</a></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"><h3>ساعة ذكية</h3><div class="price">$39.99</div><a class="buy" href="https://www.amazon.com/s?k=smart+watch" target="_blank">اشتري من أمازون ↗</a></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600"><h3>ساعة رياضية</h3><div class="price">$59.99</div><a class="buy" href="https://www.amazon.com/s?k=smartwatch" target="_blank">اشتري من أمازون ↗</a></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=600"><h3>سماعات ألعاب</h3><div class="price">$29.99</div><a class="buy" href="https://www.amazon.com/s?k=gaming+headset" target="_blank">اشتري من أمازون ↗</a></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600"><h3>عطر نسائي</h3><div class="price">$19.99</div><a class="buy" href="https://www.amazon.com/s?k=perfume+women" target="_blank">اشتري من أمازون ↗</a></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600"><h3>كاميرا</h3><div class="price">$89.99</div><a class="buy" href="https://www.amazon.com/s?k=camera" target="_blank">اشتري من أمازون ↗</a></div>
+<header><div class="logo">ديرتنا <span>DEERTNA • SHOP SMART</span></div><a class="topbtn" href="#shop">تسوّق الآن</a></header>
+
+<!-- البحث هنا في النص فوق -->
+<div class="search-box">
+<input id="search" type="search" placeholder="🔍 دور على أي منتج... سماعات، ساعة، عطر" oninput="filter()">
 </div>
-<a class="buy2" href="https://www.amazon.com" target="_blank">فتح أمازون كله ↗</a>
-<p style="font-size:12px;color:#aaa;padding:20px">ديرتنا - روابط أفلييت</p>
-</body></html>
+
+<div class="hero"><h1>تسوّق من <b>أمازون و eBay و AliExpress</b><br>في مكان واحد.</h1><p>اخترنا لك أفضل المنتجات بأفضل سعر، اضغط اشتري يفتحلك المتجر الأصلي بأمان.</p></div>
+
+<div class="filters"><a class="f1" href="#shop">اكتشف العروض</a><a class="f2" href="#shop">إلكترونات</a></div>
+
+<div class="grid" id="shop">
+<div class="card" data-name="سماعات برو"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"><h3>سماعات برو - خصم 35%</h3><div class="price">من 169 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=headphones" target="_blank">اشتري الآن من أمازون ↗</a><a class="buy" style="background:#fff" href="https://www.aliexpress.com/wholesale?SearchText=headphones" target="_blank">شوف في AliExpress ↗</a></div>
+
+<div class="card" data-name="ساعة ذكية"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800"><h3>ساعة ذكية</h3><div class="price">من 199 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=smart+watch" target="_blank">اشتري الآن من أمازون ↗</a></div>
+
+<div class="card" data-name="عطر"><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=800"><h3>عطر فاخر</h3><div class="price">من 99 ر.س</div><a class="buy" href="https://www.amazon.com/s?k=perfume" target="_blank">اشتري الآن من أمازون ↗</a></div>
+
+<div class="card" data-name="كاميرا"><img src="https
