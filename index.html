@@ -14,29 +14,17 @@
 <script>
 let cat='all';
 function setCat(c,btn){cat=c;document.querySelectorAll('.cats button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');render()}
-const phones=["iPhone 15","iPhone 15 Pro","iPhone 15 Pro Max","iPhone 14","iPhone 14 Pro","iPhone 13","iPhone 16","iPhone 16 Pro Max","Samsung Galaxy S24","Samsung Galaxy S24 Ultra","Samsung Galaxy S23","Samsung Galaxy A54","Samsung Galaxy A34","Samsung Galaxy Z Flip 5","Samsung Galaxy Z Fold 5","Google Pixel 8","Google Pixel 8 Pro","Google Pixel 7a","Xiaomi Redmi Note 13","Xiaomi Redmi Note 12","Xiaomi Poco X5 Pro","Xiaomi 13T","OnePlus 12","OnePlus 11","Nothing Phone 2","Motorola Edge 40","Honor Magic 5","Huawei P60 Pro","Realme GT Neo 5","Infinix Note 30"];
-const pcs=["HP Pavilion 15","HP Victus 15","Lenovo IdeaPad 3","Lenovo Legion 5","Dell Inspiron 15","Dell XPS 13","Asus ROG Strix G16","Asus VivoBook 15","Acer Aspire 5","Acer Nitro 5","MSI Katana 15","MSI Thin GF63","Apple MacBook Air M2","Apple MacBook Pro 14 M3","Apple MacBook Air M3","Microsoft Surface Laptop 5","Razer Blade 15","Gigabyte G5","Samsung Galaxy Book 3","Huawei MateBook D16"];
-const builds=["تجميعة RTX 4060 + Ryzen 5","تجميعة RTX 4070 + i7","تجميعة RTX 3060 + Ryzen 5","تجميعة RTX 4090 + i9","تجميعة RX 7800 XT + Ryzen 7","تجميعة RTX 4060 Ti + i5","تجميعة اقتصادية GTX 1660","تجميعة RTX 4080 + Ryzen 9","تجميعة للمونتاج RTX 4070 Ti","تجميعة للألعاب RTX 3070"];
-const imgs={phone:"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600",pc:"https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600",build:"https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600"};
-let all=[];
-for(let i=0;i<1000;i++){
- let type=i%3==0?'phone':i%3==1?'pc':'build';
- let base=type=='phone'?phones[i%phones.length]:type=='pc'?pcs[i%pcs.length]:builds[i%builds.length];
- let variant=type=='phone'?["128GB","256GB","512GB","1TB"][i%4]:type=='pc'?["8GB RAM","16GB RAM","32GB RAM","512GB SSD"][i%4]:["16GB RAM","32GB RAM","1TB SSD","2TB SSD"][i%4];
- let price=type=='phone'?199+((i*37)%800):type=='pc'?399+((i*53)%1100):599+((i*71)%1800);
- let name=base+" - "+variant+(i>=30?" "+(Math.floor(i/30)+1):"");
- let asin=["B0CHX13ZGM","B0B7N3Z6D8","B0C7X2C8QK","B098PC3VQ5","B09XS7JWHH","B0D1XD1ZV3","B0C797946T","B0BTTV6CT1"][i%8];
- all.push({name,price,type,img:imgs[type],link:"https://www.amazon.com/dp/"+asin});
-}
-function render(){
- let v=document.getElementById('searchInput').value.toLowerCase();
- let list=all.filter(p=>(cat=='all'||p.type==cat)&&p.name.toLowerCase().includes(v));
- document.getElementById('searchResult').innerText=list.length+" منتج";
- document.getElementById('noResult').style.display=list.length==0?'block':'none';
- // نعرض أول 100 بس باش الموقع ما يعلقش، و البحث يجيب الباقي
- let show=list.slice(0,100);
- document.getElementById('grid').innerHTML=show.map(p=>`<div class="card"><img onclick="window.open('${p.link}','_blank')" src="${p.img}"><h3 onclick="window.open('${p.link}','_blank')">${p.name}</h3><div class="price">${p.price}$</div><a class="buy" href="${p.link}" target="_blank">اشتري الان</a></div>`).join('')+ (list.length>100?`<p style="grid-column:1/3;text-align:center">عرضنا 100 من ${list.length} - اكتب في البحث باش تلقى الباقي</p>`:'');
-}
-render();
-</script>
-</body></html>
+const phoneImg="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600";
+const pcImg="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600";
+const buildImg="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600";
+// 10 تلفونات + 10 كمبيوترات الجداد - في الأول
+let all=[
+{name:"iPhone 15 Pro Max 256GB",price:1099,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CHX1W1XY"},
+{name:"iPhone 15 128GB",price:799,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CHX2F7QT"},
+{name:"Samsung Galaxy S24 Ultra 512GB",price:1199,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CS5T7T99"},
+{name:"Samsung Galaxy S24 256GB",price:799,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CS5V7Z1M"},
+{name:"Google Pixel 8 Pro 128GB",price:999,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CG3P7V3K"},
+{name:"Google Pixel 8 128GB",price:699,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CG3Q2M1P"},
+{name:"Xiaomi Redmi Note 13 Pro 256GB",price:299,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0B7N3Z6D8"},
+{name:"OnePlus 12 256GB",price:799,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0C7X2C8QK"},
+{name:"Samsung Galaxy A54 128GB",price:449,type:"phone",img:phoneImg,link:"
