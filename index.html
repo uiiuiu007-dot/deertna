@@ -1,9 +1,31 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا</title><style>body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}header{text-align:center;padding:10px;font-weight:900}input{width:94%;margin:0 3%;padding:11px;border-radius:20px;border:0;text-align:center;box-sizing:border-box}.c{display:flex;gap:5px;justify-content:center;padding:8px;flex-wrap:wrap}.c button{padding:8px 12px;border:0;border-radius:20px;font-weight:800;cursor:pointer}.on{background:#FFD700!important}.g{padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.k{background:#13294d;border-radius:10px;overflow:hidden}.k img{width:100%;height:140px;object-fit:cover;cursor:pointer}.k h3{text-align:center;font-size:12px;cursor:pointer}.p{text-align:center;color:#FFD700;font-weight:800}.b{display:block;margin:7px;background:#F90;color:#000;text-align:center;padding:8px;border-radius:8px;text-decoration:none;font-weight:800}</style></head><body>
-<header>ديرتنا</header><input id="s" placeholder="🔍 ابحث..." onkeyup="R()"><p id="n" style="text-align:center"></p>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا - تلفونات و كمبيوترات و تجميعات</title><style>body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}header{text-align:center;padding:12px;font-weight:900;font-size:20px}input{width:94%;margin:0 3%;padding:12px;border-radius:20px;border:0;text-align:center;box-sizing:border-box;font-size:15px}.c{display:flex;gap:6px;justify-content:center;padding:10px;flex-wrap:wrap}.c button{padding:10px 15px;border:0;border-radius:20px;font-weight:800;cursor:pointer}.on{background:#FFD700!important}.w{background:#FFD700;color:#000;text-align:center;padding:8px;font-weight:800;font-size:12px}.w2{background:#FF3B30;color:#fff;text-align:center;padding:8px;font-weight:800;font-size:12px}.g{padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:9px}.k{background:#13294d;border-radius:12px;overflow:hidden}.k img{width:100%;height:150px;object-fit:cover;cursor:pointer}.k h3{text-align:center;font-size:12px;cursor:pointer;min-height:32px}.p{text-align:center;color:#FFD700;font-weight:800}.b{display:block;margin:8px;background:#F90;color:#000;text-align:center;padding:9px;border-radius:8px;text-decoration:none;font-weight:800}.s{text-align:center;padding:12px}.s a{display:inline-block;background:#25D366;color:#fff;padding:12px 24px;border-radius:25px;text-decoration:none;font-weight:900}.f{background:#13294d;margin:10px;border-radius:12px;padding:12px;text-align:center}.f a{display:inline-block;background:#FFD700;color:#000;padding:10px 20px;border-radius:20px;text-decoration:none;font-weight:900;margin-top:6px}</style></head><body>
+<header>ديرتنا - تلفونات و كمبيوترات و تجميعات</header>
+<input id="s" placeholder="🔍 ابحث... ايفون، سامسونج، تجميعة، RTX..." onkeyup="R()"><p id="n" style="text-align:center"></p>
 <div class="c"><button class="on" onclick="F('a',this)">الكل</button><button onclick="F('p',this)">📱 تلفونات</button><button onclick="F('c',this)">💻 كمبيوترات</button><button onclick="F('b',this)">🖥️ تجميعات</button></div>
-<div class="g" id="g"></div><p style="text-align:center"><a href="mailto:uiiuiu007@gmail.com" style="color:#FFD700">📩 الدعم - uiiuiu007@gmail.com</a></p>
+<div class="w">⚠️ الصور توضيحية - قد تختلف عن المنتج الأصلي</div>
+<div class="w2">⚠️ الأسعار تتغير يومياً في امازون - السعر النهائي في امازون وقت الشراء<br>👤 الموقع يخدم فيه شخص واحد فقط</div>
+<div class="g" id="g"></div>
+<div class="s"><a href="mailto:uiiuiu007@gmail.com?subject=استفسار من موقع ديرتنا">📩 زر الدعم - تواصل معنا</a><p>uiiuiu007@gmail.com</p></div>
+<div class="f"><h3>🔎 متابعة الدعم</h3><p>بعت رسالة و ما جاكش رد؟ اضغط تحت و اكتب <b>متابعة</b> + اسم المنتج</p><a href="mailto:uiiuiu007@gmail.com?subject=متابعة الدعم - ديرتنا">🔎 متابعة الدعم</a></div>
+<div style="text-align:center;padding:12px;font-size:12px;opacity:.8">⚠️ الأسعار قد تتغير يومياً حسب امازون<br>👤 ديرتنا - يخدم فيه شخص واحد فقط<br>📩 uiiuiu007@gmail.com</div>
 <script>
 let C='a';
 function F(c,b){C=c;let btns=document.querySelectorAll('.c button');for(let i=0;i<btns.length;i++){btns[i].classList.remove('on')}b.classList.add('on');R()}
 let P="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600",Q="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600",B="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600";
-let D=[["iPhone 15 Pro Max",1099,'p','B0CHX1W1XY',P],["iPhone 15",799,'p','B0CHX2F7QT',P],["S24 Ultra",1199,'p','B0CS5T7T99',P],["S24",799,'p','B0CS5V7Z1M',P],["Pixel 8 Pro",999,'p','B0CG3P7V3K',P],["Redmi Note 13 Pro",299,'p','B0C9DYRCRB',P],["OnePlus 12",799,'p','B0CQ2J2NVP',P],["Galaxy A54",399,'p','B0BVSY7F1M',P],["iPhone 14",699,'p','B0B7N3Z6D8',P],["iPhone 13",549,'p','B0B7N3Z6D8',P],["MacBook Air M2",999,'c','B0B3C2R8MP',Q],["HP Pavilion 15",749,'c','B0B7N3Z6D8',Q],["Legion 5 RTX 4060",1199,'c','B0C7X2C8QK',Q],["Dell XPS 13",1099,'c','B08J4V7Q3F',Q],["ROG Strix G16",1399,'c','B0C7X2C
+let D=[
+["iPhone 15 Pro Max 256GB",1099,'p','B0CHX1W1XY',P],
+["iPhone 15 128GB",799,'p','B0CHX2F7QT',P],
+["Samsung Galaxy S24 Ultra 512GB",1199,'p','B0CS5T7T99',P],
+["Samsung Galaxy S24 256GB",799,'p','B0CS5V7Z1M',P],
+["Google Pixel 8 Pro 128GB",999,'p','B0CG3P7V3K',P],
+["Google Pixel 8 128GB",699,'p','B0CG3Q2M1P',P],
+["Xiaomi Redmi Note 13 Pro 256GB",299,'p','B0C9DYRCRB',P],
+["OnePlus 12 256GB",799,'p','B0CQ2J2NVP',P],
+["Samsung Galaxy A54 128GB",399,'p','B0BVSY7F1M',P],
+["Nothing Phone 2 256GB",599,'p','B0C7X2C8QK',P],
+["iPhone 14 128GB",699,'p','B0B7N3Z6D8',P],
+["iPhone 13 128GB",549,'p','B0B7N3Z6D8',P],
+["Samsung Galaxy S23 256GB",649,'p','B0B7N3Z6D8',P],
+["Google Pixel 7a 128GB",379,'p','B0B7N3Z6D8',P],
+["Xiaomi Poco X5 Pro 256GB",279,'p','B0B7N3Z6D8',P],
+["MacBook Air M2 256
