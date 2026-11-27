@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا - تلفونات و كمبيوترات</title>
 <style>body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}header{padding:12px;text-align:center;font-weight:900;font-size:20px}.search{padding:0 12px 12px}.search input{width:100%;padding:14px;border-radius:25px;border:none;outline:none;font-size:16px;text-align:center;box-sizing:border-box}.cats{display:flex;gap:8px;padding:0 12px 12px;justify-content:center;flex-wrap:wrap}.cats button{padding:10px 16px;border-radius:20px;border:none;font-weight:800;cursor:pointer}.cats button.on{background:#FFD700}.warning{background:#FFD700;color:#000;text-align:center;padding:12px;font-weight:800;font-size:13px;line-height:1.6}.warning2{background:#FF3B30;color:#fff;text-align:center;padding:10px;font-weight:800;font-size:12px;line-height:1.6}.grid{padding:12px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{background:#13294d;border-radius:14px;overflow:hidden}.card img{width:100%;height:160px;object-fit:cover;cursor:pointer}.card h3{text-align:center;font-size:13px;cursor:pointer;min-height:36px}.price{text-align:center;color:#C9A227;font-weight:800}.buy{display:block;margin:8px;background:#FF9900;color:#000;text-align:center;padding:10px;border-radius:10px;text-decoration:none;font-weight:800}.support{text-align:center;padding:12px}.support a{display:inline-block;background:#25D366;color:#fff;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:900}.follow{background:#13294d;margin:12px;border-radius:14px;padding:14px;text-align:center}.follow a{display:inline-block;background:#FFD700;color:#000;padding:12px 22px;border-radius:25px;text-decoration:none;font-weight:900;margin-top:8px}.footer{background:#081426;text-align:center;padding:14px;font-size:12px;line-height:1.8;opacity:.9}.footer a{color:#FFD700}</style></head><body>
 <header>ديرتنا - تلفونات و كمبيوترات و تجميعات</header>
-<div class="search"><input id="searchInput" type="text" placeholder="🔍 ابحث... ايفون، سامسونج، تجميعة، RTX..." onkeyup="render()"><p id="searchResult">1000 منتج</p></div>
-<div class="cats"><button class="on" onclick="setCat('all',this)">الكل 1000</button><button onclick="setCat('phone',this)">📱 تلفونات</button><button onclick="setCat('pc',this)">💻 كمبيوترات</button><button onclick="setCat('build',this)">🖥️ تجميعات</button></div>
+<div class="search"><input id="searchInput" type="text" placeholder="🔍 ابحث... ايفون، سامسونج، تجميعة، RTX..." onkeyup="render()"><p id="searchResult"></p></div>
+<div class="cats"><button class="on" onclick="setCat('all',this)">الكل</button><button onclick="setCat('phone',this)">📱 تلفونات</button><button onclick="setCat('pc',this)">💻 كمبيوترات</button><button onclick="setCat('build',this)">🖥️ تجميعات</button></div>
 <div class="warning">⚠️ الصور توضيحية - قد تختلف عن المنتج الأصلي</div>
 <div class="warning2">⚠️ الأسعار تتغير يومياً في امازون - السعر النهائي في امازون وقت الشراء<br>👤 الموقع يخدم فيه شخص واحد فقط</div>
 <div class="grid" id="grid"></div>
@@ -17,14 +17,10 @@ function setCat(c,btn){cat=c;document.querySelectorAll('.cats button').forEach(b
 const phoneImg="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600";
 const pcImg="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600";
 const buildImg="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600";
-// 10 تلفونات + 10 كمبيوترات الجداد - في الأول
+// كل نوع عنده روابطه الخاصة - التجميعة مستحيل تفتح ايربودز
 let all=[
 {name:"iPhone 15 Pro Max 256GB",price:1099,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CHX1W1XY"},
 {name:"iPhone 15 128GB",price:799,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CHX2F7QT"},
 {name:"Samsung Galaxy S24 Ultra 512GB",price:1199,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CS5T7T99"},
 {name:"Samsung Galaxy S24 256GB",price:799,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CS5V7Z1M"},
-{name:"Google Pixel 8 Pro 128GB",price:999,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CG3P7V3K"},
-{name:"Google Pixel 8 128GB",price:699,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0CG3Q2M1P"},
-{name:"Xiaomi Redmi Note 13 Pro 256GB",price:299,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0B7N3Z6D8"},
-{name:"OnePlus 12 256GB",price:799,type:"phone",img:phoneImg,link:"https://www.amazon.com/dp/B0C7X2C8QK"},
-{name:"Samsung Galaxy A54 128GB",price:449,type:"phone",img:phoneImg,link:"
+{name:"Google Pixel 
