@@ -1,17 +1,16 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>تجربة</title><style>body{background:#0B1D3A;color:#fff;font-family:system-ui;text-align:center}button{padding:12px;margin:5px;border-radius:20px;border:0;font-weight:800}.on{background:#FFD700}.k{background:#13294d;margin:10px;padding:15px;border-radius:12px}</style></head><body>
-<h2>تجربة ازرار</h2>
-<input id="box" placeholder="اكتب ايفون" oninput="go()" style="padding:12px;width:90%;border-radius:20px;border:0;text-align:center">
-<p id="num">3 منتج</p>
-<button id="bAll" class="on" onclick="setF('all',this)">الكل</button>
-<button onclick="setF('phone',this)">تلفونات</button>
-<button onclick="setF('shoe',this)">احذية</button>
-<div id="list">
-<div class="k" data-t="phone">ايفون 15 - iPhone 15</div>
-<div class="k" data-t="phone">سامسونج S24</div>
-<div class="k" data-t="shoe">حذاء نايك - Nike</div>
-</div>
-<script>
-var F='all';
-function setF(t,b){F=t;var all=document.querySelectorAll('button');for(var i=0;i<all.length;i++){all[i].classList.remove('on')}b.classList.add('on');go()}
-function go(){var q=document.getElementById('box').value.toLowerCase();var cards=document.querySelectorAll('.k');var c=0;for(var i=0;i<cards.length;i++){var show=(F==='all'||cards[i].getAttribute('data-t')===F)&&cards[i].textContent.toLowerCase().indexOf(q)>-1;cards[i].style.display=show?'block':'none';if(show)c++}document.getElementById('num').innerText=c+' منتج'}
-</script></body></html>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا</title><style>body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}header{text-align:center;padding:12px;font-weight:900;font-size:22px}.menu{display:flex;gap:6px;justify-content:center;padding:10px;flex-wrap:wrap;position:sticky;top:0;background:#0B1D3A;z-index:99}.menu a{background:#fff;color:#000;padding:10px 14px;border-radius:20px;text-decoration:none;font-weight:800;font-size:14px}.g{padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:9px}.k{background:#13294d;border-radius:12px;overflow:hidden}.k a{color:#fff;text-decoration:none}.k img{width:100%;height:150px;object-fit:cover;display:block}.k h3{text-align:center;font-size:12px;padding:0 4px}.p{text-align:center;color:#FFD700;font-weight:800}.b{display:block;margin:8px;background:#F90;color:#000;text-align:center;padding:9px;border-radius:8px;text-decoration:none;font-weight:800}h2{padding:0 12px;border-right:5px solid #FFD700;margin:20px 10px 5px}</style></head><body>
+<header>ديرتنا</header>
+<div class="menu"><a href="#all">الكل</a><a href="#phone">📱 تلفونات</a><a href="#comp">💻 كمبيوترات</a><a href="#build">🖥️ تجميعات</a><a href="#watch">⌚ ساعات</a><a href="#shoe">👟 احذية</a></div>
+
+<h2 id="all">🔥 الكل - 45 منتج</h2>
+<input placeholder="🔍 اكتب هنا للبحث في الصفحة - اضغط Ctrl + F" style="width:94%;margin:0 3%;padding:12px;border-radius:20px;border:0;text-align:center;box-sizing:border-box" onfocus="this.value=''">
+
+<h2 id="phone">📱 تلفونات - 10</h2>
+<div class="g">
+<div class="k"><a href="https://www.amazon.com/s?k=iPhone+15+Pro+Max" target="_blank"><img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600"><h3>iPhone 15 Pro Max - ايفون</h3></a><div class="p">1099$</div><a class="b" href="https://www.amazon.com/s?k=iPhone+15+Pro+Max" target="_blank">اشتري الان</a></div>
+<div class="k"><a href="https://www.amazon.com/s?k=iPhone+15" target="_blank"><img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600"><h3>iPhone 15 - ايفون</h3></a><div class="p">799$</div><a class="b" href="https://www.amazon.com/s?k=iPhone+15" target="_blank">اشتري الان</a></div>
+<div class="k"><a href="https://www.amazon.com/s?k=Samsung+Galaxy+S24+Ultra" target="_blank"><img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600"><h3>Samsung S24 Ultra - سامسونج</h3></a><div class="p">1199$</div><a class="b" href="https://www.amazon.com/s?k=Samsung+Galaxy+S24+Ultra" target="_blank">اشتري الان</a></div>
+<div class="k"><a href="https://www.amazon.com/s?k=Samsung+Galaxy+S24" target="_blank"><img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600"><h3>Samsung S24 - سامسونج</h3></a><div class="p">799$</div><a class="b" href="https://www.amazon.com/s?k=Samsung+Galaxy+S24" target="_blank">اشتري الان</a></div>
+<div class="k"><a href="https://www.amazon.com/s?k=Google+Pixel+8+Pro" target="_blank"><img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?w=600"><h3>Pixel 8 Pro - بيكسل</h3></a><div class="p">999$</div><a class="b" href="https://www.amazon.com/s?k=Google+Pixel+8+Pro" target="_blank">اشتري الان</a></div>
+<div class="k"><a href="https://www.amazon.com/s?k=Redmi+Note+13+Pro" target="_blank"><img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"><h3>Redmi Note 13 Pro - ريدمي</h3></a><div class="p">299$</div><a class="b" href="https://www.amazon.com/s?k=Redmi+Note+13+Pro" target="_blank">اشتري الان</a></div>
+<div class="k"><a
