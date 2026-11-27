@@ -1,60 +1,19 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا</title><style>body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}header{text-align:center;padding:12px;font-weight:900;font-size:20px}input{width:94%;margin:0 3%;padding:12px;border-radius:20px;border:0;text-align:center;box-sizing:border-box}.c{display:flex;gap:6px;justify-content:center;padding:10px;flex-wrap:wrap}.c button{padding:10px 15px;border:0;border-radius:20px;font-weight:800;cursor:pointer}.on{background:#FFD700!important}.g{padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:9px}.k{background:#13294d;border-radius:12px;overflow:hidden}.k a{color:#fff;text-decoration:none}.k img{width:100%;height:150px;object-fit:cover;display:block}.k h3{text-align:center;font-size:12px;min-height:32px}.p{text-align:center;color:#FFD700;font-weight:800}.b{display:block;margin:8px;background:#F90;color:#000;text-align:center;padding:9px;border-radius:8px;text-decoration:none;font-weight:800}</style></head><body>
-<header>ديرتنا - تلفونات و كمبيوترات</header>
-<input id="s" placeholder="ابحث..." onkeyup="R()"><p id="n" style="text-align:center"></p>
-<div class="c"><button class="on" onclick="F('a',this)">الكل</button><button onclick="F('p',this)">تلفونات</button><button onclick="F('c',this)">كمبيوترات</button><button onclick="F('b',this)">تجميعات</button></div>
-<div class="g" id="g"></div>
-<p style="text-align:center"><a href="mailto:uiiuiu007@gmail.com" style="color:#FFD700">الدعم - uiiuiu007@gmail.com</a></p>
-<script>
-var C='a';
-function F(c,b){C=c;var btns=document.querySelectorAll('.c button');for(var i=0;i<btns.length;i++){btns[i].classList.remove('on')}b.classList.add('on');R()}
-var P='https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600';
-var Q='https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600';
-var B='https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600';
-var D=[];
-D.push(['iPhone 15 Pro Max 256GB',1099,'p','B0CHX1W1XY',P]);
-D.push(['iPhone 15 128GB',799,'p','B0CHX2F7QT',P]);
-D.push(['Samsung S24 Ultra 512GB',1199,'p','B0CS5T7T99',P]);
-D.push(['Samsung S24 256GB',799,'p','B0CS5V7Z1M',P]);
-D.push(['Pixel 8 Pro 128GB',999,'p','B0CG3P7V3K',P]);
-D.push(['Redmi Note 13 Pro 256GB',299,'p','B0C9DYRCRB',P]);
-D.push(['OnePlus 12 256GB',799,'p','B0CQ2J2NVP',P]);
-D.push(['Galaxy A54 128GB',399,'p','B0BVSY7F1M',P]);
-D.push(['iPhone 14 128GB',699,'p','B0B7N3Z6D8',P]);
-D.push(['iPhone 13 128GB',549,'p','B0B7N3Z6D8',P]);
-D.push(['MacBook Air M2 256GB',999,'c','B0B3C2R8MP',Q]);
-D.push(['HP Pavilion 15 i7',749,'c','B0B7N3Z6D8',Q]);
-D.push(['Legion 5 RTX 4060',1199,'c','B0C7X2C8QK',Q]);
-D.push(['Dell XPS 13 i7',1099,'c','B08J4V7Q3F',Q]);
-D.push(['ROG Strix G16 RTX 4060',1399,'c','B0C7X2C8QK',Q]);
-D.push(['Nitro 5 RTX 3050',799,'c','B0B7N3Z6D8',Q]);
-D.push(['MacBook Pro 14 M3',1599,'c','B0B3C2R8MP',Q]);
-D.push(['IdeaPad 3 i5',499,'c','B0B7N3Z6D8',Q]);
-D.push(['Victus 15 RTX 3050',699,'c','B08J4V7Q3F',Q]);
-D.push(['Inspiron 15 i7',799,'c','B08J4V7Q3F',Q]);
-D.push(['تجميعة RTX 4060',899,'b','B0C7X2C8QK',B]);
-D.push(['تجميعة RTX 4070',1499,'b','B0C7X2C8QK',B]);
-D.push(['تجميعة RTX 3060',799,'b','B0B7N3Z6D8',B]);
-D.push(['كرت RTX 4060',299,'b','B0C7X2C8QK',B]);
-D.push(['كرت RTX 4070',549,'b','B0C7X2C8QK',B]);
-D.push(['كرت RTX 4080',1099,'b','B0C7X2C8QK',B]);
-D.push(['Ryzen 7 7800X3D',399,'b','B0C7X2C8QK',B]);
-D.push(['Intel i7-14700K',389,'b','B0C7X2C8QK',B]);
-D.push(['تجميعة GTX 1660',649,'b','B0B7N3Z6D8',B]);
-D.push(['تجميعة RTX 4090',2999,'b','B0C7X2C8QK',B]);
-function R(){
-var v=document.getElementById('s').value.toLowerCase();
-var html='';
-var count=0;
-for(var i=0;i<D.length;i++){
-var x=D[i];
-if(C!=='a' && x[2]!==C){continue}
-if(x[0].toLowerCase().indexOf(v)===-1){continue}
-count++;
-var link='https://www.amazon.com/dp/'+x[3];
-html+='<div class="k"><a href="'+link+'" target="_blank"><img src="'+x[4]+'"><h3>'+x[0]+'</h3></a><div class="p">'+x[1]+'$</div><a class="b" href="'+link+'" target="_blank">اشتري الان</a></div>';
-}
-document.getElementById('n').innerText=count+' منتج';
-document.getElementById('g').innerHTML=html;
-}
-R();
-</script></body></html>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ديرتنا</title><style>body{margin:0;font-family:system-ui;background:#0B1D3A;color:#fff}header{text-align:center;padding:12px;font-weight:900;font-size:20px}input{width:94%;margin:0 3%;padding:12px;border-radius:20px;border:0;text-align:center;box-sizing:border-box}.c{display:flex;gap:6px;justify-content:center;padding:10px;flex-wrap:wrap}.c button{padding:10px 14px;border:0;border-radius:20px;font-weight:800;cursor:pointer}.on{background:#FFD700!important}.g{padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:9px}.k{background:#13294d;border-radius:12px;overflow:hidden}.k a{color:#fff;text-decoration:none}.k img{width:100%;height:150px;object-fit:cover;display:block}.k h3{text-align:center;font-size:12px;min-height:32px;padding:0 4px}.p{text-align:center;color:#FFD700;font-weight:800}.b{display:block;margin:8px;background:#F90;color:#000;text-align:center;padding:9px;border-radius:8px;text-decoration:none;font-weight:800}</style></head><body>
+<header>ديرتنا</header>
+<input id="s" placeholder="ابحث... ايفون، ساعة، حذاء..." onkeyup="R()">
+<p id="n" style="text-align:center">45 منتج</p>
+<div class="c"><button class="on" onclick="F('a',this)">الكل</button><button onclick="F('p',this)">📱 تلفونات</button><button onclick="F('c',this)">💻 كمبيوترات</button><button onclick="F('b',this)">🖥️ تجميعات</button><button onclick="F('w',this)">⌚ ساعات</button><button onclick="F('s',this)">👟 احذية</button></div>
+
+<div class="g" id="g">
+
+<!-- تلفونات -->
+<div class="k" data-t="p" data-n="iphone 15 pro max"><a href="https://www.amazon.com/dp/B0CHX1W1XY" target="_blank"><img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600"><h3>iPhone 15 Pro Max 256GB</h3></a><div class="p">1099$</div><a class="b" href="https://www.amazon.com/dp/B0CHX1W1XY" target="_blank">اشتري الان</a></div>
+<div class="k" data-t="p" data-n="iphone 15"><a href="https://www.amazon.com/dp/B0CHX2F7QT" target="_blank"><img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600"><h3>iPhone 15 128GB</h3></a><div class="p">799$</div><a class="b" href="https://www.amazon.com/dp/B0CHX2F7QT" target="_blank">اشتري الان</a></div>
+<div class="k" data-t="p" data-n="samsung s24 ultra"><a href="https://www.amazon.com/dp/B0CS5T7T99" target="_blank"><img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600"><h3>Samsung S24 Ultra 512GB</h3></a><div class="p">1199$</div><a class="b" href="https://www.amazon.com/dp/B0CS5T7T99" target="_blank">اشتري الان</a></div>
+<div class="k" data-t="p" data-n="samsung s24"><a href="https://www.amazon.com/dp/B0CS5V7Z1M" target="_blank"><img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600"><h3>Samsung S24 256GB</h3></a><div class="p">799$</div><a class="b" href="https://www.amazon.com/dp/B0CS5V7Z1M" target="_blank">اشتري الان</a></div>
+<div class="k" data-t="p" data-n="pixel 8 pro"><a href="https://www.amazon.com/dp/B0CG3P7V3K" target="_blank"><img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?w=600"><h3>Pixel 8 Pro 128GB</h3></a><div class="p">999$</div><a class="b" href="https://www.amazon.com/dp/B0CG3P7V3K" target="_blank">اشتري الان</a></div>
+<div class="k" data-t="p" data-n="redmi note 13"><a href="https://www.amazon.com/dp/B0C9DYRCRB" target="_blank"><img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"><h3>Redmi Note 13 Pro 256GB</h3></a><div class="p">299$</div><a class="b" href="https://www.amazon.com/dp/B0C9DYRCRB" target="_blank">اشتري الان</a></div>
+<div class="k" data-t="p" data-n="oneplus 12"><a href="https://www.amazon.com/dp/B0CQ2J2NVP" target="_blank"><img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"><h3>OnePlus 12 256GB</h3></a><div class="p">799$</div><a class="b" href="https://www.amazon.com/dp/B0CQ2J2NVP" target="_blank">اشتري الان</a></div>
+<div class="k" data-t="p" data-n="iphone 14"><a href="https://www.amazon.com/dp/B0B7N3Z6D8" target="_blank"><img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600"><h3>iPhone 14 128GB</h3></a><div class="p">699$</div><a class="b" href="https://www.amazon.com/dp/B0B7N3Z6D8" target="_blank">اشتري الان</a></div>
+<div class="k" data-t="p" data-n="iphone 13"><a href="https://www.amazon.com/dp/B0B7N3Z6D8" target="_blank"><img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600"><h3>iPhone 13 128GB</h3></a><div class="p">549$</div><a class="b" href="https://www.amazon.com/dp/B0B7N3Z6D8" target="_blank">اشتري الان</a></div>
+<div class="k" data-t="p" data-n="galaxy a54"><a href="https://www.amazon.com/dp/B0BVSY7F1M" target="_blank"><img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600"><h3>Galaxy A54 128GB</h3></a><div class="p">399$</div><a class="b" href="https://www.amazon.com/dp/B0BVSY7F1M
